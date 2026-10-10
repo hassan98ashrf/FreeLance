@@ -91,3 +91,16 @@
 | **TC-SPC-01** | `FR-05.2` | Verify accuracy of background $\mu$, $\sigma$, $C_p$, and $C_{pk}$ calculations | 5 known weight samples with pre-calculated Minitab values | 1. Submit 5 weight readings in `quality_screen`.<br>2. Compare app's printed $C_p/C_{pk}$ with Minitab benchmark. | Calculated values match standard statistical formulas up to 2 decimal places. | Critical |
 | **TC-QUAL-01** | `FR-03.1` | Verify Lot Rejection enforcement when **Cross-Cut Test** fails | `Alcohol = Pass`, `Cross-Cut = Fail` | 1. Open `quality_screen`.<br>2. Select Pass for Alcohol, Fail for Cross-Cut.<br>3. Attempt to mark Lot as Accepted. | System enforces/recommends **Rejected** status due to failed attribute test. | High |
 | **TC-OCAP-01** | `FR-06.5` | Verify OCAP corrective action note is saved with out-of-spec reading | Reading `65.0°C` (`> UCL`); OCAP: *"Adjusted oil cooler valve"* | 1. Enter out-of-spec reading.<br>2. Select/Type OCAP corrective action.<br>3. Submit and check Firestore `inspections`. | Document in Firestore contains the exact OCAP string linked to the reading's `timestamp`. | High |
+
+
+
+## 📂 Repository Contents
+
+| File Name / Link | Description |
+| :--- | :--- |
+| `Test_Cases_and_RTM.md` | Markdown export of the Test Cases and Traceability Matrix. |
+| `QA_Bug_Reports.xlsx` | Detailed defect logs including steps to reproduce, severity, and expected vs. actual results. |
+| **[Live Google Sheets]** | *(https://docs.google.com/spreadsheets/d/16HKTTOXddLGqonw8zBPZvuTZ0CqblRVDvxKgv_OeiAU/edit?usp=sharing)* |
+
+## 🚀 Next Steps (Phase 3)
+Moving from manual frontend validation to backend verification using **Postman** for API Testing (Firestore REST endpoints and Google Sheets archiving logic).
